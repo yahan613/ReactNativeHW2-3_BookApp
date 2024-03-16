@@ -1,0 +1,20 @@
+[
+    {
+        "rate": 4,
+        "bookName": "Yves Saint Laurent",
+        "author": "Suzy Menkes",
+        "image": "first"
+    }, 
+    {
+        "rate": 3,
+        "bookName": "The Book of Signs",
+        "author": "Rudolf Koch",   
+        "image": "second"
+    },
+    {
+        "rate": 3,
+        "bookName": "Stitched Up",
+        "author": "Tansy E. Hoskins",
+        "image": "third"
+    } 
+]

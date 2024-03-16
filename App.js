@@ -1,20 +1,87 @@
-import { StatusBar } from 'expo-status-bar';
-import { StyleSheet, Text, View } from 'react-native';
+import React from 'react';
+import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
+import { NavigationContainer } from '@react-navigation/native';
+import Home from './src/Home';
+import WishList from './src/WishList';
+import MyBook from './src/MyBook';
+import { getnavicon } from './src/components/Data/getNavigator';
+import { StyleSheet, Image } from 'react-native';
 
-export default function App() {
+
+const Tab = createBottomTabNavigator();
+function MainNavigator() {
   return (
-    <View style={styles.container}>
-      <Text>Open up App.js to start working on your app!</Text>
-      <StatusBar style="auto" />
-    </View>
+    <Tab.Navigator
+      screenOptions={{
+        tabBarShowLabel: true, // 显示底部导航栏标签文本
+        headerShown: false, // 隐藏每个屏幕的上方导航栏
+        tabBarStyle: {
+          position: 'absolute',
+          bottom: 0,
+          right: 0,
+          left: 0,
+          elevation: 0,
+          height: 90,
+          backgroundcolr: '#fff',
+        },
+        tabBarInactiveTintColor: '#666666', // 非激活状态的文本颜色
+        tabBarActiveTintColor: '#6200EE', // 激活状态的文本颜色
+        tabBarLabelStyle: { // 底部标签的样式
+          fontSize: 17, // 字体大小
+          marginBottom: 10, // 调整标签上下间距，向上移动标签文本
+        },
+        tabBarIconStyle: { // 底部图标的样式
+          marginTop:10,
+          width: 40,
+          height: 40,
+        }
+      }}
+    >
+      <Tab.Screen
+        name="Home"
+        component={Home}
+        options={{
+          tabBarLabel: 'Home',
+          tabBarIcon: ({ focused }) => (
+            focused
+              ? <Image source={getnavicon("Activated_Homeimg")} style={{ width: 30, height: 30 }} />
+              : <Image source={getnavicon("Original_Homeimg")} style={{ width: 30, height: 30 }} />
+          )
+        }}
+      />
+
+      <Tab.Screen
+        name="WishList"
+        component={WishList}
+        options={{
+          tabBarLabel: 'WishList',
+          tabBarIcon: ({ focused }) => (
+            focused
+              ? <Image source={getnavicon("Activated_Listimg")} style={{ width: 30, height: 30 }} />
+              : <Image source={getnavicon("Original_Listimg")} style={{ width: 30, height: 30 }} />
+          )
+        }}
+      />
+      <Tab.Screen
+        name="MyBook"
+        component={MyBook}
+        options={{
+          tabBarLabel: 'MyBook',
+          tabBarIcon: ({ focused }) => (
+            focused
+              ? <Image source={getnavicon("Activated_Mybookimg")} style={{ width: 30, height: 30 }} />
+              : <Image source={getnavicon("Original_Mybookimg")} style={{ width: 30, height: 30 }} />
+          )
+        }}
+      />
+    </Tab.Navigator>
   );
 }
 
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    backgroundColor: '#fff',
-    alignItems: 'center',
-    justifyContent: 'center',
-  },
-});
+export default function App() {
+  return (
+    <NavigationContainer>
+      <MainNavigator />
+    </NavigationContainer>
+  );
+}
