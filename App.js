@@ -6,14 +6,23 @@ import Home from './src/Home'
 import { createStackNavigator } from '@react-navigation/stack';
 import MyDrawer from './src/DrawerNavigator';
 import { createDrawerNavigator, DrawerContentScrollView, DrawerItemList, DrawerItem } from '@react-navigation/drawer';
-const Drawer = createDrawerNavigator();
-const Stack = createStackNavigator();
 import { SafeAreaProvider, SafeAreaView } from 'react-native-safe-area-context';
+import BookinfoStack from './src/Navigator/BookinfoStack';
+import { StyleSheet, View, Text, ScrollView, Image, Pressable } from 'react-native';
 
 export default function App() {
   return (
-    <NavigationContainer>
-      <Home/>
-    </NavigationContainer>
+    <SafeAreaProvider>
+      <SafeAreaView style={styles.container}>
+        <BookinfoStack/>
+      </SafeAreaView>
+    </SafeAreaProvider>
+    
   );
 }
+
+const styles = StyleSheet.create({
+  container: {
+    flex: 1,
+  }
+})

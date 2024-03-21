@@ -14,8 +14,8 @@ export default function MainNavigator() {
     return (
       <Tab.Navigator
         screenOptions={{
-          tabBarShowLabel: true, // 显示底部导航栏标签文本
-          headerShown: false, // 隐藏每个屏幕的上方导航栏
+          tabBarShowLabel: true,
+          headerShown: false, 
           tabBarStyle: {
             position: 'absolute',
             bottom: 0,
@@ -25,13 +25,13 @@ export default function MainNavigator() {
             height: 90,
             backgroundcolr: '#fff',
           },
-          tabBarInactiveTintColor: '#666666', // 非激活状态的文本颜色
-          tabBarActiveTintColor: '#6200EE', // 激活状态的文本颜色
-          tabBarLabelStyle: { // 底部标签的样式
-            fontSize: 17, // 字体大小
-            marginBottom: 10, // 调整标签上下间距，向上移动标签文本
+          tabBarInactiveTintColor: '#666666', 
+          tabBarActiveTintColor: '#6200EE', 
+          tabBarLabelStyle: { 
+            fontSize: 17, 
+            marginBottom: 10, 
           },
-          tabBarIconStyle: { // 底部图标的样式
+          tabBarIconStyle: { 
             marginTop:10,
             width: 40,
             height: 40,

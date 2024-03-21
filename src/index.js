@@ -1,6 +1,6 @@
 import Home from "./Home";
-import WishList from "./WishList";
-import MyBook from "./MyBook";
+import WishList from "./Screen/WishList";
+import MyBook from "./Screen/MyBook";
 
 export {
     Home,

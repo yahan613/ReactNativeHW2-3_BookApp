@@ -13,7 +13,6 @@ export default function Home() {
   return (
       <View style={styles.content}>
         <MyDrawer/>
-        
       </View>
   );
 }

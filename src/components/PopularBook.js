@@ -1,33 +1,38 @@
 import React from 'react';
-import { StyleSheet, View, Text, ScrollView, Image } from 'react-native';
+import { StyleSheet, View, Text, ScrollView, Image, Pressable } from 'react-native';
+import { useNavigation } from '@react-navigation/native'; // 添加了使用導航鉤子的引入
 import PopularBookData from "./Data/PopularBookData.json";
 import { getImage } from "./Data/PopularBookImg.js";
 
-const PopularBook = () => {
+const PopularBook = ({navigation}) => {
     return (
         <View style={styles.view}>
             <Text style={styles.title}>Popular Books</Text>
             <ScrollView
                 horizontal={true}
                 contentContainerStyle={styles.container}
-                showsHorizontalScrollIndicator={false} // 移除水平滚动条
+                showsHorizontalScrollIndicator={false}
             >
-                {/* 遍历 PopularBookData 并渲染每一本书的书名和作者 */}
                 {PopularBookData.map((book, index) => (
-                    <View key={index} style={styles.item}>
-                        <Image
-                            source={getImage(book.image)}
-                            style={styles.image}
-                            resizeMode="contain"
-                        />
-                        <Text style={styles.bookName}>{book.bookName}</Text>
-                        <Text style={styles.author}>{book.author}</Text>
-                    </View>
+                    <Pressable
+                        key={index}
+                        onPress={() => navigation.navigate('BookinfoPage')}
+                    >
+                        <View key={index} style={styles.item}>
+                            <Image
+                                source={getImage(book.image)}
+                                style={styles.image}
+                                resizeMode="contain"
+                            />
+                            <Text style={styles.bookName}>{book.bookName}</Text>
+                            <Text style={styles.author}>{book.author}</Text>
+                        </View>
+                    </Pressable>
                 ))}
             </ScrollView>
         </View>
     );
-};
+}
 
 const styles = StyleSheet.create({
     view: {
@@ -41,7 +46,7 @@ const styles = StyleSheet.create({
     },
     container: {
         marginTop: -15,
-        flexDirection: 'row', // 水平排列
+        flexDirection: 'row',
         alignItems: 'center',
         justifyContent: 'flex-start',
     },
