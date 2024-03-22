@@ -4,7 +4,8 @@ import { useNavigation } from '@react-navigation/native'; // 添加了使用導�
 import PopularBookData from "./Data/PopularBookData.json";
 import { getImage } from "./Data/PopularBookImg.js";
 
-const PopularBook = ({navigation}) => {
+
+const PopularBook = ({ navigation }) => {
     return (
         <View style={styles.view}>
             <Text style={styles.title}>Popular Books</Text>
@@ -16,7 +17,13 @@ const PopularBook = ({navigation}) => {
                 {PopularBookData.map((book, index) => (
                     <Pressable
                         key={index}
-                        onPress={() => navigation.navigate('BookinfoPage')}
+                        onPress={() => navigation.navigate('BookinfoPage', {
+                            bookName: book.bookName,
+                            author: book.author,
+                            type: 'Popularbook',
+                            rate: book.rate,
+                            image: book.image,
+                        })}
                     >
                         <View key={index} style={styles.item}>
                             <Image

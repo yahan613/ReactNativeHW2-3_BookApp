@@ -1,10 +1,10 @@
 import React from 'react';
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
-import Homepage from './Screen/Homepage';
 import WishList from './Screen/WishList';
 import MyBook from './Screen/MyBook';
 import { getnavicon } from './components/Data/getNavigator';
 import { Image } from 'react-native';
+import BookinfoStack from './Navigator/BookinfoStack';
 
 
 const Tab = createBottomTabNavigator();
@@ -40,7 +40,7 @@ export default function MainNavigator() {
       >
         <Tab.Screen
           name="Home"
-          component={Homepage}
+          component={BookinfoStack}
           options={{
             tabBarLabel: 'Home',
             tabBarIcon: ({ focused }) => (

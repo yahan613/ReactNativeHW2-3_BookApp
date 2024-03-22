@@ -17,7 +17,13 @@ const NewBook = ({ navigation }) => {
                 {newBookData.map((book, index) => (
                     <Pressable
                         key={index}
-                        onPress={() => navigation.navigate('BookinfoPage')}
+                        onPress={() => navigation.navigate('BookinfoPage', {
+                            bookName: book.bookName,
+                            author: book.author,
+                            type: 'NewBook',
+                            rate: book.rate,
+                            image: book.image,
+                        })}
                     >
                         <View key={index} style={styles.item}>
                             <Image

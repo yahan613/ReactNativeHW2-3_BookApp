@@ -1,7 +1,8 @@
 import React from 'react';
-import { StyleSheet, View, ScrollView, Text, Image, TouchableOpacity, Linking } from 'react-native';
+import { StyleSheet, View, ScrollView } from 'react-native';
 import PopularBook from '../components/PopularBook';
 import NewBook from '../components/NewBook';
+
 
 
 export default function Homepage({navigation}) {

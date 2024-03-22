@@ -3,18 +3,21 @@
         "rate": 4,
         "bookName": "Yves Saint Laurent",
         "author": "Suzy Menkes",
-        "image": "first"
+        "image": "first",
+        "type": "Newbook"
     }, 
     {
         "rate": 3,
         "bookName": "The Book of Signs",
         "author": "Rudolf Koch",   
-        "image": "second"
+        "image": "second",
+        "type": "Newbook"
     },
     {
         "rate": 3,
         "bookName": "Stitched Up",
         "author": "Tansy E. Hoskins",
-        "image": "third"
+        "image": "third",
+        "type": "Newbook"
     } 
 ]

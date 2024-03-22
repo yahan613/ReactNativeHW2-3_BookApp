@@ -2,16 +2,22 @@
     {
         "bookName": "Fashionopolis",
         "author": "Dana Thomas",
-        "image": "first"
+        "image": "first",
+        "type": "Popularbook",
+        "rate": "blank"
     }, 
     {
         "bookName": "Chanel",
         "author": "Patrick Mauriès",
-        "image": "second"
+        "image": "second",
+        "type": "Popularbook",
+        "rate": "blank"
     }, 
     {
         "bookName": "Calligraphy",
         "author": "June & Lucy",
-        "image": "third"
+        "image": "third",
+        "type": "Popularbook", 
+        "rate": "blank"
     }
 ]          

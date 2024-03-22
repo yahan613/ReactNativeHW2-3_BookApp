@@ -1,11 +1,11 @@
-import { StyleSheet, View, ScrollView, Text, Image, TouchableOpacity, Linking, SafeAreaView } from 'react-native';
+import { View, Text, Image, TouchableOpacity } from 'react-native';
 import React from 'react';
-import { createDrawerNavigator, DrawerContentScrollView, DrawerItemList, DrawerItem } from '@react-navigation/drawer';
+import { createDrawerNavigator, DrawerContentScrollView, DrawerItemList } from '@react-navigation/drawer';
 import AccountScreen from './Screen/Account';
 import SettingsScreen from './Screen/Settings';
-const Drawer = createDrawerNavigator();
-import Homepage from './Screen/Homepage';
+import MainNavigator from './ButtomNavigator';
 
+const Drawer = createDrawerNavigator();
 
 
 function CustomDrawerContent(props) {
@@ -51,13 +51,13 @@ export default function MyDrawer() {
         >
             <Drawer.Screen
                 name="home"
-                component={Homepage}
+                component={MainNavigator}
                 options={({ navigation }) => ({
                     drawerIcon: ({ focused }) => (
                         focused
                             ? <Image source={{ uri: 'https://github.com/yahan613/ReactNativeHW2-3_BookApp/raw/master/src/components/img/icon_home_actived.png' }} style={{ width: 30, height: 30, }} />
                             : <Image source={{ uri: 'https://github.com/yahan613/ReactNativeHW2-3_BookApp/raw/master/src/components/img/icon_home.png' }} style={{ width: 30, height: 30, }} />
-                    ),
+                    ), 
                     headerLeft: () => (
                         <TouchableOpacity onPress={() => navigation.openDrawer()}>
                             <Image
