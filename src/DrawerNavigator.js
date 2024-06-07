@@ -1,11 +1,16 @@
-import { View, Text, Image, TouchableOpacity } from 'react-native';
+import { StyleSheet, View, ScrollView, Text, Image, TouchableOpacity, Linking, SafeAreaView } from 'react-native';
 import React from 'react';
-import { createDrawerNavigator, DrawerContentScrollView, DrawerItemList } from '@react-navigation/drawer';
+import { createDrawerNavigator, DrawerContentScrollView, DrawerItemList, DrawerItem } from '@react-navigation/drawer';
 import AccountScreen from './Screen/Account';
 import SettingsScreen from './Screen/Settings';
+const Drawer = createDrawerNavigator();
+import Homepage from './Screen/Homepage';
+import BookinfoStack from './Navigator/BookinfoStack';
+
+
 import MainNavigator from './ButtomNavigator';
 
-const Drawer = createDrawerNavigator();
+
 
 
 function CustomDrawerContent(props) {
@@ -51,7 +56,7 @@ export default function MyDrawer() {
         >
             <Drawer.Screen
                 name="home"
-                component={MainNavigator}
+                component={Homepage}
                 options={({ navigation }) => ({
                     drawerIcon: ({ focused }) => (
                         focused

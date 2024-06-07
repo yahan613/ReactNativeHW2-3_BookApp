@@ -1,10 +1,12 @@
 import React from 'react';
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
+import Homepage from './Screen/Homepage';
 import WishList from './Screen/WishList';
 import MyBook from './Screen/MyBook';
 import { getnavicon } from './components/Data/getNavigator';
 import { Image } from 'react-native';
 import BookinfoStack from './Navigator/BookinfoStack';
+import MyDrawer from './DrawerNavigator';
 
 
 const Tab = createBottomTabNavigator();
